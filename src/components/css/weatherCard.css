@@ -1,0 +1,70 @@
+.weather-card {
+    width: 50%;
+    margin: 10px auto;
+    display: flex;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .top-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .center-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .weather-label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .time-label {
+    font-size: 14px;
+    color: #666666;
+  }
+  
+  .temp {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .weather-icon {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+  }
+  
+  .label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .air-quality,
+  .wind,
+  .wind-gust {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+
+  

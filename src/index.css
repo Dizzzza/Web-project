@@ -1,0 +1,33 @@
+@import "~leaflet/dist/leaflet.css";
+body {
+   margin: 0;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+     sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+ }
+ 
+ .custom-table {
+   width: 50%;
+   border-collapse: collapse;
+   margin: 20px auto;
+   background-color: white;
+ }
+ 
+ .custom-table th, .custom-table td {
+   border: 3px solid rgb(222, 215, 215);
+   padding: 8px;
+   text-align: left;
+ }
+ 
+ .custom-table td {
+  display: flex;
+  justify-content: space-between;
+   border-right: 1px solid transparent;
+ }
+
+
+ .leaflet-container {
+  overflow: hidden;
+}

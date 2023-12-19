@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .registration-form-container {
+    width: 300px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  label > input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  #register-link {
+    color: #3498db;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+  }
+
+  .regBtn::before {
+    content: '🚀 ';
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .regBtn {
+    font-size: 1em;
+  
+    transition: background-color 0.3s ease;
+    
+    opacity: 1;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px 12px;
+    margin-top: 3vh;
+  }
+  
+  .regBtn:hover {
+    background-color: #45a049;
+  }
