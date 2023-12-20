@@ -48,7 +48,12 @@ function NavScrollExample() {
               aria-label="Search"
             />
             <Button type="submit" variant="outline-success">Search city</Button>
-            <Nav.Link href="/reg" style={{margin: '0 2vw'}}>Register</Nav.Link>
+            <Nav.Link href="/reg" style={{margin: '0 1vw'}}>
+              <Button variant="outline-success">Register</Button>
+            </Nav.Link>
+            <Nav.Link href="/login" style={{margin: '0 1vw'}}>
+              <Button variant="outline-success">Login</Button>
+            </Nav.Link>
           </Form>
         </Navbar.Collapse>
       </Container>

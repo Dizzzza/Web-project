@@ -73,6 +73,7 @@ const HourlyPage = () => {
            description: weatherItem.weather[0].main,
            temp: weatherItem.main.temp,
            speed: weatherItem.wind.speed,
+           condition: 0
          };
        });
        setMappedWeather(responseWeather);
@@ -88,7 +89,7 @@ const HourlyPage = () => {
 
 
     {mappedWeather && mappedWeather.map((weatherItem, index) => (
-      <WeatherCard key={index} currentWeather={weatherItem} />
+      <WeatherCard key={index} currentWeather={weatherItem} time={index * 3}/>
     ))}
 
     <WeatherMap />

@@ -8,6 +8,7 @@ const RegistrationForm = () => {
   const [password, setPassword] = useState('');
   const [gender, setGender] = useState('male');
   const [subscribe, setSubscribe] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState('usa'); // Added state for the selected country
 
   const handleRegister = async () => {
     try {
@@ -16,6 +17,7 @@ const RegistrationForm = () => {
         password,
         gender,
         subscribe,
+        country: selectedCountry, // Pass the selected country to the server
       });
 
       if (response && response.data) {
@@ -74,7 +76,7 @@ const RegistrationForm = () => {
       <br />
 
       <label>Select Country: </label>
-      <select>
+      <select value={selectedCountry} onChange={(e) => setSelectedCountry(e.target.value)}>
         <option value="usa">USA</option>
         <option value="canada">Canada</option>
         <option value="uk">UK</option>
@@ -82,7 +84,7 @@ const RegistrationForm = () => {
       <br />
 
       <Link to="/" style={{margin: '3vh auto'}}>
-        <button className='regBtn'>Register</button>
+        <button className='regBtn' onClick={handleRegister}>Register</button>
       </Link>
     </div>
   );

@@ -7,7 +7,7 @@ const CityList = ({ cities, deleteCity }) => {
     <ul>
       {cities.map((city, index) => (
         <li key={index}>
-          {city.city} - {city.weather}
+          City: {city.city} - Weather: {city.weather}
           <button onClick={() => deleteCity(index)}>Delete</button>
         </li>
       ))}

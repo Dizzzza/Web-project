@@ -17,16 +17,32 @@ import tornado from './img/tornado.png';
 import thunderstorm from './img/thunderstorm.png';
 import squall from './img/squall.png';
 
-const WeatherCard = ({ currentWeather }) => {
-  const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
+const WeatherCard = ({ currentWeather, time }) => {
+
+  const addHoursToCurrentTime = (currentTime, hours) => {
+    const date = new Date();
+    const [currentHours, minutes, seconds] = currentTime.split(':');
+    date.setHours(parseInt(currentHours, 10) + hours);
+    date.setMinutes(parseInt(minutes, 10));
+    date.setSeconds(parseInt(0));
+    return date.toLocaleTimeString();
+  };
+  
+  const [currentTime, setCurrentTime] = useState(
+    time
+      ? addHoursToCurrentTime(new Date().toLocaleTimeString(), time)
+      : new Date().toLocaleTimeString()
+  );
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentTime(new Date().toLocaleTimeString());
-    }, 1000);
+    if (time) {
+      const intervalId = setInterval(() => {
+        setCurrentTime(addHoursToCurrentTime(new Date().toLocaleTimeString(), time));
+      }, 1000);
 
-    return () => clearInterval(intervalId);
-  }, []);
+      return () => clearInterval(intervalId);
+    }
+  }, [time]);
 
   const { description, temp, condition, speed } = currentWeather;
 
@@ -88,7 +104,7 @@ const WeatherCard = ({ currentWeather }) => {
 
   const weatherIcon = getWeatherIcon();
 
-  if (condition == 0) {
+  if (condition != 0) {
     return (
       <div className="weather-card">
         <div className="top-left">
@@ -142,6 +158,7 @@ WeatherCard.propTypes = {
     condition: PropTypes.string.isRequired,
     speed: PropTypes.number.isRequired,
   }).isRequired,
+  time: PropTypes.number,
 };
 
 export default WeatherCard;

@@ -16,6 +16,7 @@ import axios from 'axios';
 import HourlyPage from './components/hourly';
 import CrudApp from './components/crudapp';
 import RegistrationForm from './components/registration';
+import LoginForm from './components/login';
 
 const withWeatherData = (WrappedComponent) => {
   return (props) => {
@@ -81,6 +82,12 @@ root.render(
               <Footer />
             </div>
           </ErrorBoundary>
+        } />
+        <Route path="/login" element={
+          <div>
+            <NavScrollExample />
+            <LoginForm />
+          </div>
         } />
         <Route path="/playground" element={
           <div>
